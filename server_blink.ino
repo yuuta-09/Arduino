@@ -38,7 +38,7 @@ void setup()
 
 void loop()
 {
-  // クライアントとの接続を確立する。失敗した場合はfalseと評価される
+  // サーバに接続されて、読み取り可能なデータのあるクライアントを作成。失敗した場合はfalseと評価される
   client = server.available();
   if (client)
   {
@@ -54,7 +54,7 @@ void loop()
 
 
         delay(10);
-        client.stop(); // client接続を終了する
+        client.stop(); // サーバとの接続を終了する
 
         controlLed();
       }
