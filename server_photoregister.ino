@@ -56,6 +56,8 @@ void createResultPage(const int sensorValue, const int percentValue)
       char c = client.read();
 
       String msg = "HTTP/1.1 200 OK\n\rContent-Type: text/html\n\r\n\r";
+      // metaデータの http-equiv=refreshはcontentに指定した秒数毎にページをリロードする
+      // metaデータのcharsetは文字コードを指定する
       msg += "<HTML><head><meta http-equiv=\"refresh\" content=\"5\" charset=\"utf-8\"></head><BODY><H1 style=\"color:green;\">Arduino IoT Lesson 3</H1><br>";
       msg += "<p>現在のフォトレジスタの値: ";
       msg += sensorValue;
