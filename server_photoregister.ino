@@ -18,7 +18,6 @@ IPAddress ip(169, 254, 240, 158);
 EthernetServer server(SERVER_PORT_NUM); // server port
 EthernetClient client;
 
-String readString;
 void setup()
 {
   Serial.begin(SERIAL_PORT_NUM);
@@ -68,8 +67,6 @@ void createResultPage(const int sensorValue, const int percentValue)
       delay(10);
       // サーバとの通信を終了
       client.stop();
-      // 次回使用するため文字列をリセット
-      readString = "";
     }
   }
 }
