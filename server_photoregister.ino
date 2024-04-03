@@ -54,15 +54,14 @@ void createResultPage(const int sensorValue, const int percentValue)
     if (client.available())
     {
       char c = client.read();
-      
 
       String msg = "HTTP/1.1 200 OK\n\rContent-Type: text/html\n\r\n\r";
-      msg += "<HTML><head><meta http-equiv=\"refresh\" content=\"5\"></head><BODY><H1 style=\"color:green;\">Arduino IoT Lesson 3</H1><br>";
-      msg += "<p>Real time Photoresistor value: ";
+      msg += "<HTML><head><meta http-equiv=\"refresh\" content=\"5\" charset=\"utf-8\"></head><BODY><H1 style=\"color:green;\">Arduino IoT Lesson 3</H1><br>";
+      msg += "<p>現在のフォトレジスタの値: ";
       msg += sensorValue;
-      msg += ", ";
+      msg += ", <br>パーセンテージ：";
       msg += percentValue;
-      msg += "% of maximum sensor value</p></BODY></HTML>";
+      msg += "%</p></BODY></HTML>";
       client.println(msg);
       delay(10);
       // サーバとの通信を終了
